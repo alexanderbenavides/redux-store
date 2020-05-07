@@ -1,18 +1,26 @@
 import React from "react";
-import { Button } from "react-bootstrap";
+import { Provider } from "react-redux";
+
+// Redux
+import store from "./store";
 import Header from "./components/Header";
-import CreateProduct from "./components/Products";
+import ModalProduct from "./components/Products/Modal";
 import ProductsList from "./components/Products/ProductsList";
+import ButtonOpen from "./components/Products/ButtonOpen";
+import AddProduct from "./components/Products/AddProduct";
 function App() {
   return (
-    <div className="main">
-      <Header></Header>
-      <div className="button-container">
-        <Button>Crear producto</Button>
+    <Provider store={store}>
+      <div className="main">
+        <Header />
+        <ButtonOpen />
+        <ModalProduct>
+          <AddProduct />
+        </ModalProduct>
+        <h2>Lista de platos favoritos</h2>
+        <ProductsList />
       </div>
-      <CreateProduct></CreateProduct>
-      <ProductsList></ProductsList>
-    </div>
+    </Provider>
   );
 }
 
