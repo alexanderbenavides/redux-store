@@ -1,17 +1,19 @@
 const initialProps = {
-  tweets: [],
+  products: [],
 };
 export default function (state = initialProps, action) {
   switch (action.type) {
-    case "ADD_TWEET":
+    case "ADD_PRODUCT":
       return {
         ...state,
-        tweets: [...state.tweets, action.payload],
+        products: [...state.products, action.payload],
       };
-    case "DELETE_TWEET":
+    case "DELETE_PRODUCT":
       return {
         ...state,
-        tweets: state.tweets.filter((tweet) => tweet.id !== action.payload),
+        products: state.products.filter(
+          (product) => product.id !== action.payload
+        ),
       };
     default:
       return state;

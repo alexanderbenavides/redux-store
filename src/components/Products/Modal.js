@@ -10,7 +10,7 @@ export default function Modal(props) {
   const closeModal = (state) => dispatch(openCloseAddProductModalAction(state));
 
   // useSelector para aceder a un valor en el store
-  const isOpenModal = useSelector((state) => state.modals.stateModalAddTweet);
+  const isOpenModal = useSelector((state) => state.modals.stateModalAddProduct);
   return (
     <ModalB
       show={isOpenModal}

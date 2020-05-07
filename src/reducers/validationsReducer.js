@@ -1,13 +1,13 @@
 const initialProps = {
-  errorFormAddTweet: false
+  errorFormAddproduct: false,
 };
 
-export default function(state = initialProps, action) {
+export default function (state = initialProps, action) {
   switch (action.type) {
-    case "VALIDATION_FORM_ADD_TWEET":
+    case "VALIDATION_FORM_ADD_PRODUCT":
       return {
         ...state,
-        errorFormAddTweet: action.payload
+        errorFormAddproduct: action.payload,
       };
     default:
       return state;

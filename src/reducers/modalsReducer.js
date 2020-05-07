@@ -1,13 +1,13 @@
 const initialProps = {
-  stateModalAddTweet: false,
+  stateModalAddProduct: false,
 };
 
 export default function (state = initialProps, action) {
   switch (action.type) {
-    case "STATE_ADD_TWEET_MODAL":
+    case "STATE_ADD_PRODUCT_MODAL":
       return {
         ...state,
-        stateModalAddTweet: action.payload,
+        stateModalAddProduct: action.payload,
       };
     default:
       return state;

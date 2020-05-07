@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import { Form, Button, Alert } from "react-bootstrap";
 import { useDispatch, useSelector } from "react-redux";
-import { validationFormAddTweetAction } from "../../actions/validationsActions";
-import { addTweetAction } from "../../actions/tweetsActions";
+import { validationFormAddProductAction } from "../../actions/validationsActions";
+import { addProductAction } from "../../actions/productsActions";
 import { openCloseAddProductModalAction } from "../../actions/modalsActions";
 import { v4 as uuidv4 } from "uuid";
 import moment from "moment";
 
-export default function FormAddTweet() {
+export default function FormAddproduct() {
   const [formValue, setFormValue] = useState({
     name: "",
     tweet: "",
@@ -15,13 +15,13 @@ export default function FormAddTweet() {
 
   // Inicializacion del dispach y ejecucion de las acciones.
   const dispatch = useDispatch();
-  const errorForm = (state) => dispatch(validationFormAddTweetAction(state));
-  const addTweet = (state) => dispatch(addTweetAction(state));
+  const errorForm = (state) => dispatch(validationFormAddProductAction(state));
+  const addProduct = (state) => dispatch(addProductAction(state));
   const closeModal = (state) => dispatch(openCloseAddProductModalAction(state));
 
   // Obtener estado de la validacion del fomrulario
   const errorFormValue = useSelector(
-    (state) => state.validations.errorFormAddTweet
+    (state) => state.validations.errorFormAddproduct
   );
   const onChange = (e) => {
     setFormValue({
@@ -31,16 +31,16 @@ export default function FormAddTweet() {
   };
   const onSubmit = (e) => {
     e.preventDefault();
-    const { name, tweet } = formValue;
+    const { product, price } = formValue;
 
-    if (!name || !tweet) {
+    if (!product || !price) {
       errorForm(true);
     } else {
       errorForm(false);
-      addTweet({
+      addProduct({
         id: uuidv4(),
-        name,
-        tweet,
+        product,
+        price,
         date: moment(),
       });
       closeModal(false);
@@ -53,10 +53,18 @@ export default function FormAddTweet() {
         <h1>Nuevo producto</h1>
       </Form.Group>
       <Form.Group>
-        <Form.Control type="text" name="name" placeholder="Nombre del plato" />
+        <Form.Control
+          type="text"
+          name="product"
+          placeholder="Nombre del plato"
+        />
       </Form.Group>
       <Form.Group>
-        <Form.Control type="number" name="tweet" row="3" placeholder="precio" />
+        <Form.Control
+          type="number"
+          name="price"
+          placeholder="precio en dólares"
+        />
       </Form.Group>
       <Button varian="primary" type="submit">
         registrar producto

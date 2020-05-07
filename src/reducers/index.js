@@ -1,10 +1,10 @@
 import { combineReducers } from "redux";
 import modalsReducer from "./modalsReducer";
 import validationsReducer from "./validationsReducer";
-import tweetsReducer from "./tweetsReducer";
+import productsReducer from "./productsReducer";
 
 export default combineReducers({
   modals: modalsReducer,
   validations: validationsReducer,
-  tweets: tweetsReducer
+  products: productsReducer,
 });

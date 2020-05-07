@@ -13,7 +13,7 @@ const store = createStore(
 );
 store.subscribe(() => {
   setStateLocalStorage({
-    tweets: store.getState().tweets,
+    products: store.getState().products,
   });
 });
 

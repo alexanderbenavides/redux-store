@@ -1,9 +1,9 @@
 export const getStateLocalStoraga = () => {
-  const tweetsStorage = localStorage.getItem("tweets");
-  if (tweetsStorage === null) return undefined;
-  return JSON.parse(tweetsStorage);
+  const productsStorage = localStorage.getItem("products");
+  if (productsStorage === null) return undefined;
+  return JSON.parse(productsStorage);
 };
 
 export const setStateLocalStorage = (state) => {
-  localStorage.setItem("tweets", JSON.stringify(state));
+  localStorage.setItem("products", JSON.stringify(state));
 };

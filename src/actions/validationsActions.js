@@ -1,6 +1,6 @@
-export const validationFormAddTweetAction = state => {
+export const validationFormAddProductAction = (state) => {
   return {
-    type: "VALIDATION_FORM_ADD_TWEET",
-    payload: state
+    type: "VALIDATION_FORM_ADD_PRODUCT",
+    payload: state,
   };
 };
