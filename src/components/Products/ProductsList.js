@@ -25,10 +25,7 @@ function Product(props) {
       <img src={logo}></img>
       <div>{product.product}</div>
       <div>$/ {product.price}</div>
-      <div>
-        Fecha de resgitro:{" "}
-        {typeof product.date === "object" ? "" : product.date.substring(0, 10)}
-      </div>
+      <div>Fecha de resgitro: {product.date}</div>
     </div>
   );
 }

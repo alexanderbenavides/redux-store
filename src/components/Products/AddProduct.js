@@ -41,7 +41,7 @@ export default function FormAddproduct() {
         id: uuidv4(),
         product,
         price,
-        date: moment(),
+        date: moment().format("MMMM Do YYYY, h:mm:ss a"),
       });
       closeModal(false);
     }
